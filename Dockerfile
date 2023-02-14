@@ -1,4 +1,4 @@
-FROM adoptopenjdk
+FROM adoptopenjdk/openjdk11 #실행파일
 RUN chmod u+x mvnw 
 CMD ["./mvnw", "clean", "package"]
 ARG JAR_FILE_PATH=target/*.jar
