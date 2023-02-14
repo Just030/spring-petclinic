@@ -24,7 +24,7 @@ pipeline {
       steps{
         echo 'Docker Image'
         dir("${env.WORKSPACE}") { #현재 작업해야하는 위치
-          sh 'docker build -t aws09-spring-petclinic:1.0'
+          sh 'docker build -t aws09-spring-petclinic:1.0 .'
         }
       }
     }
