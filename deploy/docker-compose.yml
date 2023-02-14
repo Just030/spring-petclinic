@@ -1,0 +1,7 @@
+vesion: '3.9'
+services:
+  aws09-spring-petclinic:
+    image: ${IMAGE}:${TAG}
+    container_name: aws09-spring-petclinic
+    ports:
+      - "8080:8080
