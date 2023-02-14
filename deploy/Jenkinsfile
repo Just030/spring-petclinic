@@ -42,11 +42,11 @@ pipeline {
       steps{
         echo 'Image Push'
         script{
-        // cleanup current user docker credentials
-        sh 'rm -f ~/.dockercfg ~/.docker/config.json || true'                    
+          // cleanup current user docker credentials
+          sh 'rm -f ~/.dockercfg ~/.docker/config.json || true'                    
                    
-        docker.withRegistry("https://${ECR_REPOSITORY}", "ecr:${REGION}:${AWS_CREDENTIAL_NAME}") {
-          docker.image("${ECR_DOCKER_IMAGE}:${ECR_DOCKER_TAG}").push()
+          docker.withRegistry("https://${ECR_REPOSITORY}", "ecr:${REGION}:${AWS_CREDENTIAL_NAME}") {
+            docker.image("${ECR_DOCKER_IMAGE}:${ECR_DOCKER_TAG}").push()
           }
         }
       }
