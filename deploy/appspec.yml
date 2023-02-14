@@ -1,0 +1,22 @@
+version: 0.0
+
+os: linux
+
+files:
+  - source: / #deploy디렉토리 에서
+    destination: /home/ubuntu #오토스케일링 타켓으로
+permission:
+  - object: /home/ubuntu
+    patten: "**"
+    owner: ubuntu
+    group: ubuntu
+hooks:
+  ApplicationStop:
+    - location: scripts/kill_process.sh
+      timeout: 100
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/run_process.sh
+      timeout: 3600
+      runas: ubuntu
+  
