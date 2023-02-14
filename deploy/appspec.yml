@@ -3,8 +3,8 @@ version: 0.0
 os: linux
 
 files:
-  - source: / #deploy디렉토리 에서
-    destination: /home/ubuntu #오토스케일링 타켓으로
+  - source: / 
+    destination: /home/ubuntu 
 permission:
   - object: /home/ubuntu
     patten: "**"
